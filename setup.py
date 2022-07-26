@@ -10,7 +10,7 @@ with io.open('webvtt/__init__.py', 'rt', encoding='utf-8') as f:
 
 
 setup(
-    name='webvtt-py',
+    name='webvtt',
     version=version,
     description='WebVTT reader, writer and segmenter',
     long_description=readme,
