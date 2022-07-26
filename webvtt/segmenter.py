@@ -57,7 +57,7 @@ class WebVTTSegmenter(object):
                     f.writelines(['{}\n'.format(l) for l in caption.lines])
 
     def _write_manifest(self):
-        manifest_file = os.path.join(self._output_folder, 'prog_index.m3u8')
+        manifest_file = os.path.join(self._output_folder, 'subs.m3u8')
         with open(manifest_file, 'w', encoding='utf-8') as f:
             f.write('#EXTM3U\n')
             f.write('#EXT-X-TARGETDURATION:{}\n'.format(self.seconds))
