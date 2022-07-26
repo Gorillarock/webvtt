@@ -5,7 +5,7 @@ from .errors import InvalidCaptionsError
 from .webvtt import WebVTT
 from .structures import Caption
 
-MPEGTS = 900000
+MPEGTS = 90000
 SECONDS = 5  # default number of seconds per segment
 
 __all__ = ['WebVTTSegmenter']
