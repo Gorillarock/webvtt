@@ -6,7 +6,7 @@ from .webvtt import WebVTT
 from .structures import Caption
 
 MPEGTS = 900000
-SECONDS = 10  # default number of seconds per segment
+SECONDS = 5  # default number of seconds per segment
 
 __all__ = ['WebVTTSegmenter']
 
@@ -46,7 +46,7 @@ class WebVTTSegmenter(object):
 
     def _write_segments(self):
         for index in range(self.total_segments):
-            segment_file = os.path.join(self._output_folder, 'fileSequence{}.webvtt'.format(index))
+            segment_file = os.path.join(self._output_folder, 'segment{}.webvtt'.format(index))
 
             with open(segment_file, 'w', encoding='utf-8') as f:
                 f.write('WEBVTT\n')
@@ -65,8 +65,8 @@ class WebVTTSegmenter(object):
             f.write('#EXT-X-PLAYLIST-TYPE:VOD\n')
 
             for i in range(self.total_segments):
-                f.write('#EXTINF:30.00000\n')
-                f.write('fileSequence{}.webvtt\n'.format(i))
+                f.write('#EXTINF:5.00000\n')
+                f.write('segment{}.webvtt\n'.format(i))
 
             f.write('#EXT-X-ENDLIST\n')
 
